@@ -3,7 +3,6 @@ import os
 import sys
 import numpy as np
 
-import versioneer
 from setuptools import find_packages, setup
 
 from distutils.extension import Extension
@@ -42,13 +41,13 @@ pymt_components = [
     ("Waves=pymt_cem.bmi:Waves", "meta/Waves"),
 ]
 
-cmdclass = get_cmdclass(pymt_components, cmdclass=versioneer.get_cmdclass())
+cmdclass = get_cmdclass(pymt_components)
 
 setup(
     name="pymt_cem",
     author="Eric Hutton",
     description="PyMT plugin for cem",
-    version=versioneer.get_version(),
+    version="v0.1.4.dev0",
     setup_requires=["cython"],
     ext_modules=ext_modules,
     packages=packages,
